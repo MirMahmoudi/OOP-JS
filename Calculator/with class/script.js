@@ -60,7 +60,7 @@ class Calculator {
     also through the if condition line in updateDisplay(), we can present operation
     in the display) => getDisplayNumber()*/
     getDisplayNumber(number){
-        /*this the first and simple version of this function:
+        /*this is the first and simple version of the function:
         const floatNumber = parseFloat(number);
         if(isNaN(floatNumber)) return '';
         return floatNumber.toLocaleString('en'); */
@@ -97,9 +97,7 @@ class Calculator {
     }
 }
 
-/*
-todo accessing to the html tags
-*/
+// accessing to the html tags
 const numberButtons = document.querySelectorAll('[number]');
 const operationButtons = document.querySelectorAll('[operation]');
 const equalsButton = document.querySelector('[equalsBtn]');
