@@ -1,8 +1,8 @@
 //Calculating functions
 
 function clearDisplay(){
-    previousOperand = '';
-    currentOperand = '';
+    previousOperand = undefined;
+    currentOperand = undefined;
     currentOperation = undefined;
 }
 
@@ -17,7 +17,7 @@ function appendNumber(number){
 
 function chooseOperation(operation){
     if(currentOperand === '') return;
-    if(previousOperand !== ''){
+    if(previousOperand !== null){
         compute();
     };
     currentOperation = operation;
@@ -70,15 +70,11 @@ function displayNumberFormat(number){
 
 function updateDisplay(){
     currentOperandText.innerText = displayNumberFormat(currentOperand);
-    if(currentOperation != null){
-        previousOperandText.innerText = `${displayNumberFormat(previousOperand)} ${currentOperation}` ;
-    }else{
-        previousOperandText.innerText = '';
-    }
+    previousOperandText.innerText = currentOperation ? `${displayNumberFormat(previousOperand)} ${currentOperation}` : '';
 }
 
 function equalsFunctionSetting(){
-    currentOperand = '';
+    currentOperand = null;
 }
 
 
